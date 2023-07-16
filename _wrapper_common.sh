@@ -57,7 +57,7 @@ function create_targets_array() {
 			eval "$target_arr+=(\"\$buildconfig\")"
 			eval "$origin_arr+=(\"\$targetsdir\")"
 		done < <(cat $targetsfile)
-	done < <(find -maxdepth 5 -name build.targets | sort)
+	done < <(find -L -maxdepth 5 -name build.targets | sort)
 }
 
 # list_targets: lists all found target build.configs, one per line
