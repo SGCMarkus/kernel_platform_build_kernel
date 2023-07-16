@@ -71,15 +71,10 @@
 
 set -e
 
-# rel_path <to> <from>
-# Generate relative directory path to reach directory <to> from <from>
-function rel_path() {
-  python -c "import os.path; import sys; print(os.path.relpath(sys.argv[1], sys.argv[2]))" "$1" "$2"
-}
-
 export ROOT_DIR=$(readlink -f $(dirname $0)/..)
 
 source "${ROOT_DIR}/build/_setup_env.sh"
+source "${ROOT_DIR}/build/build_utils.sh"
 
 export MAKE_ARGS="$* ${KBUILD_OPTIONS}"
 export MAKEFLAGS="-j$(nproc) ${MAKEFLAGS}"
