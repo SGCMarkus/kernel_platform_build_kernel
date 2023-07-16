@@ -48,7 +48,7 @@ if [ -z "${KERNEL_DIR}" ]; then
     build_config_dir=$(dirname ${build_config_path})
     build_config_dir=${build_config_dir##${ROOT_DIR}/}
     build_config_dir=${build_config_dir##${real_root_dir}}
-    KERNEL_DIR="${build_config_dir}"
+    KERNEL_DIR="msm-kernel"
 fi
 
 set -a
